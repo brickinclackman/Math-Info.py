@@ -31,13 +31,25 @@ def Afficher_Matrice(matrice):
     """Affiche une matrice ligne par ligne."""
     return "\n".join(["[" + " ".join(map(str, ligne)) + "]" for ligne in matrice])
 
-def Mult_2_Mat(M,N):
-    nmb_columns_M = nombre_colonnes_Mat(M)
-    nmb_lines_N = nombre_lignes_Mat(N)
-    if(nmb_columns_M == nmb_lines_N):
-        NewMat = [nmb_columns_M][nmb_lines_N]
-        return NewMat
-    else:
-        print(colored("\n\tIMPOSSIBLE DE CALCULER LA MULTIPLICATION DE CES DEUX MATRICES","red"))
-        return 0
+def Mult_2_Mat(M, N):
+    # Vérification des dimensions des matrices
+    nmb_lines_M = nombre_lignes(M)
+    nmb_columns_M = nombre_colonnes(M)
+    nmb_lines_N = nombre_lignes(N)
+    nmb_columns_N = nombre_colonnes(N)
 
+    # Vérification de compatibilité des dimensions
+    if nmb_columns_M != nmb_lines_N:
+        print("\n\tIMPOSSIBLE DE CALCULER LA MULTIPLICATION DE CES DEUX MATRICES")
+        return None
+
+    # Initialisation de la nouvelle matrice
+    NewMat = [[0 for _ in range(nmb_columns_N)] for _ in range(nmb_lines_M)]
+
+    # Calcul de la multiplication
+    for ligne in range(nmb_lines_M):          # Parcourir chaque ligne de M
+        for colonne in range(nmb_columns_N):  # Parcourir chaque colonne de N
+            for index in range(nmb_columns_M): # Parcourir chaque élément commun
+                NewMat[ligne][colonne] += M[ligne][index] * N[index][colonne]
+
+    return NewMat

@@ -33,10 +33,10 @@ def Afficher_Matrice(matrice):
 
 def Mult_2_Mat(M, N):
     # Vérification des dimensions des matrices
-    nmb_lines_M = nombre_lignes(M)
-    nmb_columns_M = nombre_colonnes(M)
-    nmb_lines_N = nombre_lignes(N)
-    nmb_columns_N = nombre_colonnes(N)
+    nmb_lines_M = nombre_lignes_Mat(M)
+    nmb_columns_M = nombre_colonnes_Mat(M)
+    nmb_lines_N = nombre_lignes_Mat(N)
+    nmb_columns_N = nombre_colonnes_Mat(N)
 
     # Vérification de compatibilité des dimensions
     if nmb_columns_M != nmb_lines_N:
@@ -53,3 +53,4 @@ def Mult_2_Mat(M, N):
                 NewMat[ligne][colonne] += M[ligne][index] * N[index][colonne]
 
     return NewMat
+

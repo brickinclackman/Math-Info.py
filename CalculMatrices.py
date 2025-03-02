@@ -66,3 +66,27 @@ def Mult_2_Mat(M, N):
 
     return NewMat
 
+def transpose_Mat_mxn(A):
+    """Transposition d'une matrice de taille MxN avec des boucles
+
+    Args:
+        A (np.array): Matrice de taille MxN
+
+    Returns:
+        np.array: Matrice A transposée
+    """
+    nmb_line_A = nmb_line(A)
+    #print("Nmb Line A : ",nmb_line_A)
+    nmb_col_A = nmb_col(A)
+    #print("Nmb Col A : ",nmb_col_A)
+
+    MatriceR = np.zeros((nmb_col_A,nmb_line_A))
+    print("MR : ",MatriceR)
+    print("A : ",A)
+    print("DIM(A) : ",nmb_line_A,"x",nmb_col_A)
+
+    for i in range(nmb_line_A):
+        for j in range(nmb_col_A):
+            MatriceR[j][i] = A[i][j]
+    
+    return MatriceR

@@ -75,9 +75,9 @@ def transpose_Mat_mxn(A):
     Returns:
         np.array: Matrice A transposée
     """
-    nmb_line_A = nmb_line(A)
+    nmb_line_A = nombre_lignes_Mat(A)
     #print("Nmb Line A : ",nmb_line_A)
-    nmb_col_A = nmb_col(A)
+    nmb_col_A = nombre_colonnes_Mat(A)
     #print("Nmb Col A : ",nmb_col_A)
 
     MatriceR = np.zeros((nmb_col_A,nmb_line_A))

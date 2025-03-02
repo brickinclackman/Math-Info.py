@@ -76,8 +76,8 @@ def transpose_Mat_mxn(A):
         list of lists: Matrice A transposée
     """
     # Nombre de lignes et de colonnes de A
-    nmb_line_A = len(A)         # Le nombre de lignes est la longueur de la liste principale
-    nmb_col_A = len(A[0])      # Le nombre de colonnes est la longueur de la première ligne (assumée uniforme)
+    nmb_line_A = nombre_lignes_Mat(A)
+    nmb_col_A = nombre_colonnes_Mat(A)
 
     # Création d'une matrice vide de taille NxM pour la transposition
     MatriceR = [[0] * nmb_line_A for _ in range(nmb_col_A)]  # Liste imbriquée, remplie de zéros
@@ -87,4 +87,4 @@ def transpose_Mat_mxn(A):
         for j in range(nmb_col_A):
             MatriceR[j][i] = A[i][j]
     
-    return MatriceR
+    return np.array(MatriceR)

@@ -26,6 +26,18 @@ def Somme_2_Mat(M,N):
     else:
         print(colored("\n\tIMPOSSIBLE DE CALCULER LA SOMME DE CES DEUX MATRICES","red"))
         return 0
+
+def Difference_2_Mat(M,N):
+    nmb_lines_M = nombre_lignes_Mat(M)
+    nmb_columns_M = nombre_colonnes_Mat(M)
+    nmb_lines_N = nombre_lignes_Mat(N)
+    nmb_columns_N = nombre_colonnes_Mat(N)
+    if((nmb_lines_M == nmb_lines_N) and (nmb_columns_M == nmb_columns_N)):
+        A = M - N
+        return A
+    else:
+        print(colored("\n\tIMPOSSIBLE DE CALCULER LA SOMME DE CES DEUX MATRICES","red"))
+        return 0
     
 def Afficher_Matrice(matrice):
     """Affiche une matrice ligne par ligne."""

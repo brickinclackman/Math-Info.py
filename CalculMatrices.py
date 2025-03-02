@@ -64,7 +64,7 @@ def Mult_2_Mat(M, N):
             for index in range(nmb_columns_M): # Parcourir chaque élément commun
                 NewMat[ligne][colonne] += M[ligne][index] * N[index][colonne]
 
-    return NewMat
+    return np.array(NewMat)
 
 def transpose_Mat_mxn(A):
     """Transposition d'une matrice de taille MxN avec des boucles

@@ -70,21 +70,19 @@ def transpose_Mat_mxn(A):
     """Transposition d'une matrice de taille MxN avec des boucles
 
     Args:
-        A (np.array): Matrice de taille MxN
+        A (list of lists): Matrice de taille MxN (listes imbriquées)
 
     Returns:
-        np.array: Matrice A transposée
+        list of lists: Matrice A transposée
     """
-    nmb_line_A = nombre_lignes_Mat(A)
-    #print("Nmb Line A : ",nmb_line_A)
-    nmb_col_A = nombre_colonnes_Mat(A)
-    #print("Nmb Col A : ",nmb_col_A)
+    # Nombre de lignes et de colonnes de A
+    nmb_line_A = len(A)         # Le nombre de lignes est la longueur de la liste principale
+    nmb_col_A = len(A[0])      # Le nombre de colonnes est la longueur de la première ligne (assumée uniforme)
 
-    MatriceR = np.zeros((nmb_col_A,nmb_line_A))
-    print("MR : ",MatriceR)
-    print("A : ",A)
-    print("DIM(A) : ",nmb_line_A,"x",nmb_col_A)
+    # Création d'une matrice vide de taille NxM pour la transposition
+    MatriceR = [[0] * nmb_line_A for _ in range(nmb_col_A)]  # Liste imbriquée, remplie de zéros
 
+    # Transposition proprement dite
     for i in range(nmb_line_A):
         for j in range(nmb_col_A):
             MatriceR[j][i] = A[i][j]

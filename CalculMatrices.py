@@ -32,6 +32,7 @@ def Somme_2_Mat_boucle(M,N):
     nmb_columns_M = nombre_colonnes_Mat(M)
     nmb_lines_N = nombre_lignes_Mat(N)
     nmb_columns_N = nombre_colonnes_Mat(N)
+    A = [[0 for _ in range(nmb_columns_N)] for _ in range(nmb_lines_M)]
     if((nmb_lines_M == nmb_lines_N) and (nmb_columns_M == nmb_columns_N)):
         for i in range(nmb_lines_M):
             for j in range(nmb_columns_N):
